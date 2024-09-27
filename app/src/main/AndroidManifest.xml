@@ -13,8 +13,9 @@
         android:theme="@style/Theme.Ongiasp_aplicativo"
         tools:targetApi="31">
         <activity
-            android:name=".Menu"
-            android:exported="false" />
+            android:name=".Ocorrencias"
+            android:exported="true" />
+
         <activity
             android:name=".Cadastro"
             android:exported="true" />

@@ -9,7 +9,7 @@
             android:icon="@drawable/email_icon"
             android:title="Home"></item>
         <item
-            android:id="@+id/nav_cadastro"
+            android:id="@+id/nav_ocorrencias"
             android:icon="@drawable/email_icon"
             android:title="Ocorrencias"></item>
         <item
@@ -23,11 +23,12 @@
 
     </group>
 
-    <group android:checkableBehavior="single">
+
 
         <item android:title="Perfil">
 
             <menu>
+                <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_entrar"
                     android:icon="@drawable/email_icon"
@@ -40,11 +41,12 @@
                     android:id="@+id/nav_perfil"
                     android:icon="@drawable/email_icon"
                     android:title="Perfil"></item>
+                </group>
             </menu>
         </item>
 
 
-    </group>
+
 
     <item android:title="Comunicaçao">
         <menu>

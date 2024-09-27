@@ -1,0 +1,29 @@
+  {
+  "project_info": {
+    "project_number": "245852410097",
+    "project_id": "ongiaspapp",
+    "storage_bucket": "ongiaspapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245852410097:android:5689899a6f4962cf545950",
+        "android_client_info": {
+          "package_name": "com.fieb.ongiasp_aplicativo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5DRERK2QuO73_NNnYR96zJsWJHhRIhDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,25 +1,35 @@
 package com.fieb.ongiasp_aplicativo;
 
-import androidx.appcompat.app.ActionBar;
+import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toolbar;
+import android.widget.Button;
+
+
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
+
+    private Button botao_one;
+    private Button button_two;
 
 
     @SuppressLint("MissingInflatedId")
@@ -29,6 +39,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_ofc);
 
 
+
+
+
+
+        IniciarComponenetes();
+IniciarComponenetes_two();
+
+
+        botao_one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+            }
+        });
+        button_two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Ocorrencias.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         /*HOOKS*/
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_views);
@@ -36,10 +71,13 @@ public class MainActivity extends AppCompatActivity {
         /*Tools*/
         setSupportActionBar(toolbar);
         /*NAVIGATION*/
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_open, R.string.navigation_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -49,9 +87,43 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             super.onBackPressed();
+
         }
-        super.onBackPressed();
+
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.nav_entrar) {
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+            drawerLayout.closeDrawer(GravityCompat.START); // Fecha o drawer após a seleção
+            return true;
+        }
+        // Adicione mais opções de navegação conforme necessário
+        return false;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.nav_entrar) {
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+
+
+    private void IniciarComponenetes() {
+        botao_one = findViewById(R.id.botao_one);
+    }
+    private void IniciarComponenetes_two() {
+        button_two = findViewById(R.id.button_two);
+    }
+
 
 
 }
