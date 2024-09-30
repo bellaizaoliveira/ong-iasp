@@ -23,6 +23,9 @@ public class FormPagerAdapter extends RecyclerView.Adapter<FormViewHolder> {
             case 2:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.formulario_terceiro, parent, false);
                 break;
+            case 3:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.formulario_quarto, parent, false);
+                break;
             default:
                 throw new IllegalStateException("Unexpected position: " + viewType);
         }
@@ -36,7 +39,7 @@ public class FormPagerAdapter extends RecyclerView.Adapter<FormViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 3; // Número total de formulários
+        return 4 ; // Número total de formulários
     }
 
     @Override

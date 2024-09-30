@@ -12,6 +12,8 @@ public class FormViewHolder extends RecyclerView.ViewHolder {
     EditText editTextEndereco;
     EditText editTextEmail;
 
+    EditText editTextQuarto;
+
     @SuppressLint("ResourceType")
     public FormViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -21,6 +23,9 @@ public class FormViewHolder extends RecyclerView.ViewHolder {
             editTextEndereco = itemView.findViewById(R.id.edit_text_comp);
         } else if (itemView.getId() == R.layout.formulario_terceiro) {
             editTextEmail = itemView.findViewById(R.id.edit_text_email);
+        }
+        else if (itemView.getId() == R.layout.formulario_quarto) {
+            editTextQuarto = itemView.findViewById(R.id.edit_text_NUM);
         }
     }
 }

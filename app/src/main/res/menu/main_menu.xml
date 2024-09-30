@@ -48,19 +48,5 @@
 
 
 
-    <item android:title="Comunicaçao">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/email_icon"
-                android:title="Compartilhar"></item>
-            <item
-                android:id="@+id/nav_avaliar"
-                android:icon="@drawable/email_icon"
-                android:title="Avalie-nos"></item>
 
-        </menu>
-
-
-    </item>
 </menu>
